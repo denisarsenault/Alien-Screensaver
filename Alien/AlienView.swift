@@ -1,4 +1,7 @@
-//  Copyright 2019 Denis Arsenault
+//  AlienView.swift
+//
+//  Created by Denis Arsenault on 21/05/2019.
+//  Copyright © 2019 Denis Arsenault. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.

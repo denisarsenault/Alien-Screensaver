@@ -1,5 +1,8 @@
-//  Copyright 2019 Denis Arsenault
+// Preferenes.swift
 //
+//  Created by Denis Arsenault on 21/05/2019.
+//  Copyright © 2019 Denis Arsenault. All rights reserved.
+
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
@@ -28,12 +31,19 @@ final class Preferences: Configuration
     
     public var primaryColor: NSColor {
         set {
-            defaults.set(NSKeyedArchiver.archivedData(withRootObject: newValue), forKey: Key.primaryColor)
+            guard let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true) else {
+                return
+            }
+            defaults.set(data, forKey: Key.primaryColor)
             defaults.synchronize()
         }
-        
+
         get {
-            return NSKeyedUnarchiver.unarchiveObject(with: defaults.object(forKey: Key.primaryColor) as! Data) as! NSColor
+            guard let data = defaults.data(forKey: Key.primaryColor),
+                  let color = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: data) else {
+                return .red
+            }
+            return color
         }
     }
     
@@ -93,7 +103,7 @@ final class Preferences: Configuration
         }
         
         defaults.register(defaults: [
-            Key.primaryColor: NSKeyedArchiver.archivedData(withRootObject: NSColor.red),
+            Key.primaryColor: (try? NSKeyedArchiver.archivedData(withRootObject: NSColor.red, requiringSecureCoding: true)) ?? Data(),
             Key.reverseFilling: false,
             Key.twentyFourClockFormat: true,
             Key.autoInstallUpdates: false,

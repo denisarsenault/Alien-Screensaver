@@ -21,7 +21,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Denis Arsenault. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>Alien.AlienView</string>
+	<string>$(PRODUCT_MODULE_NAME).AlienView</string>
 	<key>SUFeedURL</key>
 	<string></string>
 	<key>SUPublicEDKey</key>

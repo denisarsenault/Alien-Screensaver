@@ -134,7 +134,7 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Bnn-dY-5vI" userLabel="Preview View" customClass="AlienPreviewView" customModule="Predator" customModuleProvider="target">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Bnn-dY-5vI" userLabel="Preview View" customClass="AlienPreviewView" customModule="AlienScreenSaver" customModuleProvider="target">
                         <rect key="frame" x="256" y="131" width="288" height="162"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="162" id="2Vj-sF-LIl"/>

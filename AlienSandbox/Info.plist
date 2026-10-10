@@ -30,5 +30,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSScreenCaptureUsageDescription</key>
+	<string>AlienScreenSaver records your desktop for five minutes during setup and loops that recording while the screen is locked.</string>
 </dict>
 </plist>
